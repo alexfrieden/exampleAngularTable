@@ -24,7 +24,7 @@
     <!-- Status Column -->
     <ng-container mdColumnDef="status">
       <md-header-cell *mdHeaderCellDef> Status</md-header-cell>
-      <md-cell *mdCellDef="let row"> {{row.status}}</md-cell>
+      <md-cell *mdCellDef="let row" (click)="foo()"> <button>Hello</button> {{row.status}}</md-cell>
     </ng-container>
 
     <!-- Start Column -->

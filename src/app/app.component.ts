@@ -29,6 +29,9 @@ export class AppComponent {
   ngOnInit() {
     this.dataSource = new PipelineDataSource(this.pipelineDatabase, this.paginator);
   }
+  foo(){
+    console.log('fred')
+  }
 }
 export interface PipelineRun {
   id: string;
