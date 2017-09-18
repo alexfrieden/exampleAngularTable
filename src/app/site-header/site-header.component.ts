@@ -11,5 +11,7 @@ export class SiteHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+foo() {
+    console.log("fred")
+}
 }
