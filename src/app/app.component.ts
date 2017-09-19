@@ -29,8 +29,9 @@ export class AppComponent {
   ngOnInit() {
     this.dataSource = new PipelineDataSource(this.pipelineDatabase, this.paginator);
   }
-  foo(){
-    console.log('fred')
+
+  navigateToLink(rowId){
+    console.log(rowId)
   }
 }
 export interface PipelineRun {
@@ -42,7 +43,6 @@ export interface PipelineRun {
 }
 
 /** An example database that the data source uses to retrieve data for the table. */
-// @Injectable()
 export class PipelineDatabase {
   /** Stream that emits whenever the data has been modified. */
   dataChange: BehaviorSubject<PipelineRun[]> = new BehaviorSubject<PipelineRun[]>([]);

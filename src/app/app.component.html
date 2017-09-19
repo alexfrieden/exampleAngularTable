@@ -22,27 +22,30 @@
     </ng-container>
 
     <!-- Status Column -->
-    <ng-container mdColumnDef="status">
-      <md-header-cell *mdHeaderCellDef> Status</md-header-cell>
-      <md-cell *mdCellDef="let row" (click)="foo()"> <button>Hello</button> {{row.status}}</md-cell>
+
+    <!--<ng-container mdColumnDef="status">-->
+      <!--<md-header-cell *mdHeaderCellDef> Status</md-header-cell>-->
+      <!--<md-cell *mdCellDef="let row" (click)="foo()"> <button>Hello</button> {{row.status}}</md-cell>-->
+
+    <ng-container mdColumnDef="link">
+      <md-header-cell *mdHeaderCellDef> Link</md-header-cell>
+      <!--<md-cell *mdCellDef="let row" (click)="navigateToLink(row.id)"> <button>Hello</button> {{row.link}}</md-cell>-->
+      <md-cell *mdCellDef="let row" routerLink="run"><button>Hello</button> {{row.link}}</md-cell>
     </ng-container>
 
-    <!-- Start Column -->
     <ng-container mdColumnDef="start">
       <md-header-cell *mdHeaderCellDef> Start</md-header-cell>
       <md-cell *mdCellDef="let row" [style.color]="row.start"> {{row.start}}</md-cell>
     </ng-container>
 
-    <!-- End Column -->
     <ng-container mdColumnDef="end">
       <md-header-cell *mdHeaderCellDef> End</md-header-cell>
       <md-cell *mdCellDef="let row" [style.color]="row.end"> {{row.end}}</md-cell>
     </ng-container>
 
-    <!-- Link Column -->
-    <ng-container mdColumnDef="link">
-      <md-header-cell *mdHeaderCellDef> Link</md-header-cell>
-      <button md-button href="www.google.com">link</button>
+    <ng-container mdColumnDef="status">
+      <md-header-cell *mdHeaderCellDef> Status</md-header-cell>
+      <md-cell *mdCellDef="let row" [style.color]="row.status"> {{row.status}}</md-cell>
     </ng-container>
 
     <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
@@ -56,4 +59,5 @@
                 [pageSizeOptions]="[5, 10, 25, 100]">
   </md-paginator>
 </div>
+
 </html>
